@@ -87,49 +87,38 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        leading: const Icon(
+          Icons.notification_add,
+          color: Colors.amber,
+        ),
       ),
-      body: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          child: Container(
-        color: Colors.black38,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          mainAxisSize: MainAxisSize.min, // MainAxisSize.max
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Stack(
           children: [
-            Container(
-              width: 100.0,
-              height: 100.0,
-              padding: const EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Colors.red,
-              ),
+            Image.asset(
+              'assets/images/bg.jpg',
+              height: double.infinity,
+              fit: BoxFit.fill,
+            ),
+            SizedBox(
+              // Center is a layout widget. It takes a single child and positions it
+              // in the middle of the parent.
               child: Center(
-                child: Text("Hello $_counter",
-                    style: const TextStyle(
-                      color: Colors.amber,
-                    )),
+                child: Text(
+                  'You have pushed the button this many times: \n $_counter',
+                ),
               ),
             ),
-            Container(
-              width: 100.0,
-              height: 100.0,
-              padding: const EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Colors.red,
-              ),
-              child: Center(
-                child: Text("Hello $_counter",
-                    style: const TextStyle(
-                      color: Colors.amber,
-                    )),
-              ),
-            ),
+            const ListTile(
+                leading: Icon(Icons.join_full),
+                tileColor: Colors.red,
+                title: Text("List Tile Title"),
+                onTap: null,
+                trailing: Icon(Icons.arrow_forward_ios_rounded)),
           ],
         ),
-      )),
+      ),
 
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
