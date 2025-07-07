@@ -92,30 +92,17 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.amber,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Stack(
+      body: const Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Wrap(
+          spacing: 10.0, // Gap between adjacent children
+          direction: Axis.horizontal, // Direction of the wrap
           children: [
-            Image.asset(
-              'assets/images/bg.jpg',
-              height: double.infinity,
-              fit: BoxFit.fill,
-            ),
-            SizedBox(
-              // Center is a layout widget. It takes a single child and positions it
-              // in the middle of the parent.
-              child: Center(
-                child: Text(
-                  'You have pushed the button this many times: \n $_counter',
-                ),
-              ),
-            ),
-            const ListTile(
-                leading: Icon(Icons.join_full),
-                tileColor: Colors.red,
-                title: Text("List Tile Title"),
-                onTap: null,
-                trailing: Icon(Icons.arrow_forward_ios_rounded)),
+            Text("Merhabalar efendim nasılsınız?"),
+            Text("Flutter ile ilk uygulamamı yapıyorum."),
+            Text(
+                "Bu uygulama, Flutter'ın temel özelliklerini gösterir. Daha fazla özellik ekleyebilirsiniz. Gayet kullanışlı."),
+            Text("Umarım beğenirsiniz!"),
           ],
         ),
       ),
